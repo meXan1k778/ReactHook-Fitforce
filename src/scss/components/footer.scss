@@ -188,12 +188,21 @@
     padding-left: 50px;
   }
 
+  .footer .footer-item:nth-child(3) {
+    width: 300px;
+  }
+
   .footer .downloadApp-group img {
     width: 120px;
   }
 }
 
 @media (max-width: 768px) {
+  .footer .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .footer .logo-footer {
     width: 267px;
     margin-left: auto;
@@ -278,6 +287,10 @@
     width: auto !important;
   }
 
+  .footer .downloadApp-group img {
+    width: 140px;
+  }
+
   .footer .logo-footer {
     width: 267px;
     margin-left: auto;
@@ -289,8 +302,8 @@
     margin-left: auto;
     margin-right: auto;
     text-align: justify;
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 12px;
+    line-height: 14px;
     margin-bottom: 51px;
   }
 
@@ -316,6 +329,7 @@
 
   .footer .footer-item:nth-child(2) {
     padding-left: 0;
+    margin-right: 0;
   }
 
   .footer .footer-menu {
@@ -367,7 +381,7 @@
   }
 
   .footer .footer-form-desc {
-    max-width: 330px;
+    max-width: 290px;
     margin: 12px auto 0 auto;
     font-size: 16px;
     line-height: 18px;
@@ -391,7 +405,5 @@
     max-width: 100%;
   }
 
-  .footer .downloadApp-group img {
-    width: 110px;
-  }
+
 }

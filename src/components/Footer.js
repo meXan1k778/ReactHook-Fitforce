@@ -49,13 +49,22 @@ const Footer = () => {
               <a className="footer-menu__item" href="https://fitforce.com/">
                 Home
               </a>
-              <a className="footer-menu__item" href="https://fitforce.zendesk.com/">
+              <a
+                className="footer-menu__item"
+                href="https://fitforce.zendesk.com/"
+              >
                 Support
               </a>
-              <a className="footer-menu__item" href="https://fitforce.com/magazine">
+              <a
+                className="footer-menu__item"
+                href="https://fitforce.com/magazine"
+              >
                 Magazine
               </a>
-              <a className="footer-menu__item" href="https://fitforce.com/trainer">
+              <a
+                className="footer-menu__item"
+                href="https://fitforce.com/trainer"
+              >
                 For Trainers
               </a>
             </div>
@@ -95,7 +104,7 @@ const Footer = () => {
           </div>
           <div className="footer-item">
             <h3 className="footer__title footer__title_form">
-              FitForce.com Newsletter
+              FitForce is growing.
             </h3>
             <p className="footer-form-desc">
               Stay up to date with the latest news on what's coming soon.
@@ -114,7 +123,9 @@ const Footer = () => {
               />
               <input type="submit" value="subscribe" />
             </form>
-            <h3 className="footer__title footer__title_social-mobile">Follow Us</h3>
+            <h3 className="footer__title footer__title_social-mobile">
+              Follow Us
+            </h3>
             <div className="social social_mobile">
               <a
                 href="https://twitter.com/WeAreFitForce"
