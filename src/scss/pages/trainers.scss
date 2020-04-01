@@ -1,11 +1,19 @@
 .trainers {
   padding: 66px 0 220px;
 
+  @media screen and (max-width: 768px) {
+    padding: 27px 0 220px;
+  }
+
   .trainers__items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 58px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 20px;
+    }
 
     .trainers__item {
       padding: 38px;

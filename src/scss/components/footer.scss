@@ -287,6 +287,10 @@
     width: auto !important;
   }
 
+  footer .footer-item:nth-child(1) {
+    width: 315px !important;
+  }
+
   .footer .downloadApp-group img {
     width: 140px;
   }
@@ -316,7 +320,7 @@
 
   .footer .downloadApp-group {
     margin: 19px auto 60px auto;
-    max-width: 290px;
+    max-width: 315px;
   }
 
   .footer .downloadApp-group a:first-child {
@@ -337,7 +341,7 @@
     display: flex;
     -ms-flex-direction: row;
     flex-direction: row;
-    max-width: 290px;
+    max-width: 315px;
     margin: 0 auto 33px auto;
     font-size: 18px;
   }
@@ -381,7 +385,7 @@
   }
 
   .footer .footer-form-desc {
-    max-width: 290px;
+    max-width: 315px;
     margin: 12px auto 0 auto;
     font-size: 16px;
     line-height: 18px;

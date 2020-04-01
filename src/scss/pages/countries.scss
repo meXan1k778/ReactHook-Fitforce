@@ -2,7 +2,7 @@
   padding: 66px 0 220px;
 
   @media screen and (max-width: 768px) {
-    padding-bottom: 30px;
+    padding: 27px 0 220px;
   }
 
   .countries__items {
@@ -12,7 +12,10 @@
 
     @media screen and (max-width: 768px) {
       column-count: 1;
+      margin-top: 0px;
+
     }
+
 
     .countries__item {
       display: inline-block;
@@ -24,7 +27,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
       }
 
       .countries__country {
@@ -55,7 +58,8 @@
 
         @media screen and (max-width: 768px) {
           padding-top: 20px;
-          padding-left: 0;
+          padding-left: 62px;
+          ;
         }
 
         .countries__city {
