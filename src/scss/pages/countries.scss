@@ -11,10 +11,6 @@
     margin-top: 50px;
 
     @media screen and (max-width: 768px) {
-      column-count: 2;
-    }
-
-    @media screen and (max-width: 576px) {
       column-count: 1;
     }
 
@@ -22,6 +18,14 @@
       display: inline-block;
       vertical-align: top;
       margin-bottom: 60px;
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
 
       .countries__country {
         display: flex;
@@ -51,6 +55,7 @@
 
         @media screen and (max-width: 768px) {
           padding-top: 20px;
+          padding-left: 0;
         }
 
         .countries__city {

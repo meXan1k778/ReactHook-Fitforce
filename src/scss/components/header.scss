@@ -1,6 +1,15 @@
 .header {
+  height: 64px;
   background: #519beb;
-  padding: 15px 0;
+  padding: 0 10px;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 
   .header__wrap {
     display: flex;
@@ -8,6 +17,9 @@
     align-items: center;
 
     .header__logoBox {
+      position: relative;
+      z-index: 1100;
+
       img {
         max-width: 100%;
 
@@ -52,11 +64,12 @@
           background: #519beb;
           z-index: 1000;
           flex-direction: column;
-          justify-content: center;
-          transform: translateX(-100%);
+          // justify-content: center;
+          padding-top: 100px;
+          display: none;
 
           &.opened {
-            transform: translateX(0);
+            display: flex;
           }
         }
 
@@ -71,11 +84,19 @@
 
             @media screen and (max-width: 520px) {
               margin-right: 0;
-              margin-bottom: 20px;
+              margin-bottom: 40px;
+              font-weight: 500;
+              font-size: 20px;
+              line-height: 20px;
             }
           }
         }
       }
+    }
+
+    .header__cloud {
+      position: relative;
+      z-index: 1100;
     }
 
     .header__burger {
