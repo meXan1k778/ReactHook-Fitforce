@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 // import PropTypes from "prop-types";
 
 // Components
+import Checkbox from "rc-checkbox";
+import "rc-checkbox/assets/index.css";
 
 // Actions
 import { test } from "../actions/test";
@@ -12,10 +14,43 @@ const Countries = ({ history, test }) => {
     <Fragment>
       <section className="countries">
         <div className="container">
-          <div className="page__back" onClick={() => history.push("/")}>
+          <div
+            className="page__back"
+            onClick={() => (window.location = "https://fitforce.com/")}
+          >
             <img src="/images/arrowBack.svg" alt="" />
-            <span>Back</span>
+            <span>Back to FotForce.com</span>
           </div>
+          <div className="page__mainTitle">
+            <h1>Select Service</h1>
+          </div>
+          <div className="countries__services">
+            <label className="countries__service">
+              <Checkbox checked disabled={false} />
+              Online Coaching
+            </label>
+            <label className="countries__service">
+              <Checkbox disabled={false} />
+              Health and fitness training
+            </label>
+            <label className="countries__service">
+              <Checkbox disabled={false} />
+              Yoga and Pilates
+            </label>
+            <label className="countries__service ml25px">
+              <Checkbox disabled={false} />
+              Diet and nutrition
+            </label>
+            <label className="countries__service ml25px">
+              <Checkbox disabled={false} />
+              Physiotherapy
+            </label>
+            <label className="countries__service ml25px">
+              <Checkbox disabled={false} />
+              Other
+            </label>
+          </div>
+
           <div className="page__mainTitle">
             <h1>Select Country & City</h1>
           </div>
