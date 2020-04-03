@@ -1,13 +1,19 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { connect } from "react-redux";
+import Config from "../config";
+import { useFetch } from "../hooks";
 
 // Components
 import Trainer from "../components/Trainer";
-
-// Actions
-import { test } from "../actions/test";
+import Loader from "../components/Loader";
 
 const Trainers = ({ history, test, match, location }) => {
+  const [trainers, setTrainers] = useState([]);
+
+  const [data, loading] = useFetch(`${Config.API_URL}/trainers`, "POST", {
+    country: match.params.servece
+  });
+
+  console.log("data", data);
   useEffect(() => {
     setFilter(match.params.servece);
     window.scroll(0, 0);
@@ -26,47 +32,34 @@ const Trainers = ({ history, test, match, location }) => {
     }
   };
   return (
-    <Fragment>
-      <section className="trainers">
-        <div className="container">
-          <div className="page__back" onClick={() => history.push("/")}>
-            <img src="/images/arrowBack.svg" alt="" />
-            <span>Back</span>
-          </div>
-          <div className="page__mainTitle">
-            <h1>Available Trainers</h1>
-            <div className="page__country">{getParamsType()}</div>
-          </div>
-          <div className="trainers__items">
-            {trainersArr.map(elem => {
-              if (
-                elem.specialities.match(filter) ||
-                elem.location.match(filter)
-              ) {
-                return <Trainer data={elem} />;
-              }
-              return <div />;
-            })}
-          </div>
+    <section className="trainers">
+      {loading && <Loader />}
+      <div className="container">
+        <div className="page__back" onClick={() => history.push("/")}>
+          <img src="/images/arrowBack.svg" alt="" />
+          <span>Back</span>
         </div>
-      </section>
-    </Fragment>
+        <div className="page__mainTitle">
+          <h1>Available Trainers</h1>
+          <div className="page__country">{getParamsType()}</div>
+        </div>
+        <div className="trainers__items">
+          {data.map(trainer => {
+            // if (
+            //   elem.specialities.match(filter) ||
+            //   elem.location.match(filter)
+            // ) {
+            return <Trainer data={trainer} />;
+            // }
+            // return <div />;
+          })}
+        </div>
+      </div>
+    </section>
   );
 };
 
-const mapStateToProps = state => ({
-  ...state
-});
-
-const mapDispatchToProps = {
-  test
-};
-
-Trainers.propTypes = {
-  // test:PropTypes.func,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Trainers);
+export default Trainers;
 
 const trainersArr = [
   {
