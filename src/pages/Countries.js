@@ -1,11 +1,6 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
-// import PropTypes from "prop-types";
-
-// Components
-import Checkbox from "rc-checkbox";
-import "rc-checkbox/assets/index.css";
-
+import { Link } from "react-router-dom";
 // Actions
 import { test } from "../actions/test";
 
@@ -25,30 +20,42 @@ const Countries = ({ history, test }) => {
             <h1>Select Service</h1>
           </div>
           <div className="countries__services">
-            <label className="countries__service">
-              <Checkbox disabled={false} />
+            <Link
+              to={{ pathname: "/trainers/Online Coaching", type: "servece" }}
+              className="countries__service"
+            >
               Online Coaching
-            </label>
-            <label className="countries__service">
-              <Checkbox disabled={false} />
+            </Link>
+            <Link
+              to={{ pathname: "/trainers/Health and fitness training" }}
+              className="countries__service"
+            >
               Health and fitness training
-            </label>
-            <label className="countries__service">
-              <Checkbox disabled={false} />
+            </Link>
+            <Link
+              to={{ pathname: "/trainers/Yoga and Pilates", type: "servece" }}
+              className="countries__service"
+            >
               Yoga and Pilates
-            </label>
-            <label className="countries__service ml25px">
-              <Checkbox disabled={false} />
+            </Link>
+            <Link
+              to={{ pathname: "/trainers/Diet and nutrition", type: "servece" }}
+              className="countries__service ml25px"
+            >
               Diet and nutrition
-            </label>
-            <label className="countries__service ml25px">
-              <Checkbox disabled={false} />
+            </Link>
+            <Link
+              to={{ pathname: "/trainers/Physiotherapy", type: "servece" }}
+              className="countries__service ml25px"
+            >
               Physiotherapy
-            </label>
-            <label className="countries__service ml25px">
-              <Checkbox disabled={false} />
+            </Link>
+            <Link
+              to={{ pathname: "/trainers/Other", type: "servece" }}
+              className="countries__service ml25px"
+            >
               Other
-            </label>
+            </Link>
           </div>
 
           <div className="page__mainTitle">
@@ -60,63 +67,72 @@ const Countries = ({ history, test }) => {
                 <div className="countries__flag">
                   <img src="/images/united-kingdom.svg" alt="" />
                 </div>
-                <h6>United Kingdom</h6>
+                <h6>
+                  <Link
+                    to={{
+                      pathname: "/trainers/United Kingdom",
+                      type: "country"
+                    }}
+                  >
+                    United Kingdom
+                  </Link>
+                </h6>
               </div>
               <div className="countries__cities">
-                <div
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
+                </Link>
               </div>
             </div>
             <div className="countries__item">
@@ -124,33 +140,42 @@ const Countries = ({ history, test }) => {
                 <div className="countries__flag">
                   <img src="/images/united-kingdom.svg" alt="" />
                 </div>
-                <h6>United Kingdom</h6>
+                <h6>
+                  <Link
+                    to={{
+                      pathname: "/trainers/United Kingdom",
+                      type: "country"
+                    }}
+                  >
+                    United Kingdom
+                  </Link>
+                </h6>
               </div>
               <div className="countries__cities">
-                <div
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
+                </Link>
               </div>
             </div>
             <div className="countries__item">
@@ -158,33 +183,42 @@ const Countries = ({ history, test }) => {
                 <div className="countries__flag">
                   <img src="/images/united-kingdom.svg" alt="" />
                 </div>
-                <h6>United Kingdom</h6>
+                <h6>
+                  <Link
+                    to={{
+                      pathname: "/trainers/United Kingdom",
+                      type: "country"
+                    }}
+                  >
+                    United Kingdom
+                  </Link>
+                </h6>
               </div>
               <div className="countries__cities">
-                <div
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
+                </Link>
               </div>
             </div>
             <div className="countries__item">
@@ -192,33 +226,42 @@ const Countries = ({ history, test }) => {
                 <div className="countries__flag">
                   <img src="/images/united-kingdom.svg" alt="" />
                 </div>
-                <h6>United Kingdom</h6>
+                <h6>
+                  <Link
+                    to={{
+                      pathname: "/trainers/United Kingdom",
+                      type: "country"
+                    }}
+                  >
+                    United Kingdom
+                  </Link>
+                </h6>
               </div>
               <div className="countries__cities">
-                <div
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
+                </Link>
               </div>
             </div>
             <div className="countries__item">
@@ -226,33 +269,42 @@ const Countries = ({ history, test }) => {
                 <div className="countries__flag">
                   <img src="/images/united-kingdom.svg" alt="" />
                 </div>
-                <h6>United Kingdom</h6>
+                <h6>
+                  <Link
+                    to={{
+                      pathname: "/trainers/United Kingdom",
+                      type: "country"
+                    }}
+                  >
+                    United Kingdom
+                  </Link>
+                </h6>
               </div>
               <div className="countries__cities">
-                <div
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
+                </Link>
               </div>
             </div>
             <div className="countries__item">
@@ -260,33 +312,42 @@ const Countries = ({ history, test }) => {
                 <div className="countries__flag">
                   <img src="/images/united-kingdom.svg" alt="" />
                 </div>
-                <h6>United Kingdom</h6>
+                <h6>
+                  <Link
+                    to={{
+                      pathname: "/trainers/United Kingdom",
+                      type: "country"
+                    }}
+                  >
+                    United Kingdom
+                  </Link>
+                </h6>
               </div>
               <div className="countries__cities">
-                <div
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
-                <div
+                </Link>
+                <Link
+                  to={{ pathname: "/trainers/Liverpool", type: "city" }}
                   className="countries__city"
-                  onClick={() => history.push("/trainers")}
                 >
                   Liverpool
-                </div>
+                </Link>
               </div>
             </div>
           </div>

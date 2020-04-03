@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
-const Trainer = () => {
+const Trainer = ({data}) => {
   return (
     <div className="trainers__item">
       <div className="trainers__main">
@@ -13,11 +13,10 @@ const Trainer = () => {
           <h5>Rob McMurray</h5>
           <h6>Impact Fitness</h6>
         </div>
-        <p className="trainers__geo">Termecula, California, United States</p>
+        <p className="trainers__geo">{data.location}</p>
       </div>
       <div className="trainers__spec">
-        <span>Specialities:</span> Health and fitness training, Diet and
-        nutrition
+        <span>Specialities:</span> {data.specialities}
       </div>
       <Link to={'/trainer'} className="trainers__link">
         Learn more about Juliane Perez
@@ -26,6 +25,8 @@ const Trainer = () => {
   );
 };
 
-// Trainer.propTypes = {}
+Trainer.propTypes = {
+  data: PropTypes.object,
+}
 
 export default Trainer;
