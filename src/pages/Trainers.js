@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Config from "../config";
 import { useFetch } from "../hooks";
 
@@ -6,20 +6,18 @@ import { useFetch } from "../hooks";
 import Trainer from "../components/Trainer";
 import Loader from "../components/Loader";
 
-const Trainers = ({ history, test, match, location }) => {
-  const [trainers, setTrainers] = useState([]);
-
+const Trainers = ({ history, match, location }) => {
   const [data, loading] = useFetch(`${Config.API_URL}/trainers`, "POST", {
     country: match.params.servece
   });
 
   console.log("data", data);
   useEffect(() => {
-    setFilter(match.params.servece);
+    // setFilter(match.params.servece);
     window.scroll(0, 0);
   }, [match.params.servece]);
 
-  const [filter, setFilter] = useState({});
+  // const [filter, setFilter] = useState({});
 
   const getParamsType = () => {
     if (location.type === "servece") {

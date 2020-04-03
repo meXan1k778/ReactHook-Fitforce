@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const Trainer = ({data}) => {
+  console.log('data', data)
   return (
     <div className="trainers__item">
       <div className="trainers__main">

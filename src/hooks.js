@@ -7,7 +7,11 @@ function useFetch(url, method, body) {
   const opitons = {
     method,
   }
-  method  === "POST" && (opitons.body = JSON.stringify({body: body}));
+  if( method  === "POST") {
+    opitons.headers = {'Content-Type': 'application/json'};
+    (opitons.body = JSON.stringify(body));
+  }
+ 
 
   async function fetchUrl() {
     const response = await fetch(url, opitons);
