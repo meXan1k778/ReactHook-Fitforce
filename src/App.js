@@ -14,6 +14,15 @@ import Trainers from "./pages/Trainers";
 import "./App.scss";
 
 function App() {
+
+  // Hede all console
+  const noOp = function() {}
+console.log('window', window)
+  window.console = {
+    log: noOp,
+    dir: noOp,
+    error:noOp,
+  };
   return (
     <Router>
       <Fragment>

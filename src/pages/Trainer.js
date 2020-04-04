@@ -74,10 +74,7 @@ const Trainer = ({ match, history }) => {
                   <img
                     src={data[0].avatar_url}
                     alt=""
-                    onError={e => {
-                      console.log("dddd");
-                      setIsValidUrl(false);
-                    }}
+                    onError={e => setIsValidUrl(false)}
                   />
                 ) : (
                   <LaterAvatar
@@ -123,7 +120,7 @@ const Trainer = ({ match, history }) => {
                       data[0].certificates.map((certificate, index) => (
                         <span className="trainers__spec_item" key={index}>
                           {certificate}
-                          {index !== data[0].services.length - 1 && (
+                          {index !== data[0].certificates.length - 1 && (
                             <i className="coma">, </i>
                           )}
                         </span>
