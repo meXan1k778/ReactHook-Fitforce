@@ -37,17 +37,7 @@ const Trainer = ({ match, history }) => {
                 </h1>
                 <p className="d-none d-md-block">
                   {!data[0].city || (!data[0].country && "Online Trainer")}
-                  {data[0].country && data[0].city && (
-                    <Link
-                      to={{
-                        pathname: `/trainers`,
-                        search: `?country=${data[0].country}`,
-                        type: "country"
-                      }}
-                    >
-                      {data[0].country}
-                    </Link>
-                  )}
+
                   {data[0].city && data[0].country && (
                     <Link
                       to={{
@@ -56,7 +46,18 @@ const Trainer = ({ match, history }) => {
                         type: "city"
                       }}
                     >
-                      {", " + data[0].city}
+                      {data[0].city}
+                    </Link>
+                  )}
+                  {data[0].country && data[0].city && (
+                    <Link
+                      to={{
+                        pathname: `/trainers`,
+                        search: `?country=${data[0].country}`,
+                        type: "country"
+                      }}
+                    >
+                      {", " + data[0].country}
                     </Link>
                   )}
                 </p>
@@ -117,7 +118,7 @@ const Trainer = ({ match, history }) => {
                       data[0].certificates.length &&
                       data[0].certificates.map((certificate, index) => (
                         <span className="trainers__spec_item" key={index}>
-                          {certificate.value}
+                          {certificate}
                           {index !== data[0].services.length - 1 && ", "}
                         </span>
                       ))}

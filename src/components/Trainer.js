@@ -41,7 +41,7 @@ const Trainer = ({ trainer }) => {
         <div>
           {certificates && certificates.length && certificates.map((certificate, index) => (
             <span className="trainers__spec_item" key={index}>
-              {certificate.value}
+              {certificate}
               {index !== services.length - 1 && ", "}
             </span>
           ))}
