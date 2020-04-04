@@ -9,9 +9,9 @@ import Loader from "../components/Loader";
 import LaterAvatar from "../components/LaterAvatar";
 
 const Trainer = ({ match, history }) => {
-  const [data, loading] = useFetch(`${Config.API_URL}/trainer`, "POST", {
-    id: match.params.id
-  });
+  const [data, loading] = useFetch(
+    `${Config.API_URL}/trainer/${match.params.id}`
+  );
 
   const [isValidUrl, setIsValidUrl] = useState(true);
   useEffect(() => {

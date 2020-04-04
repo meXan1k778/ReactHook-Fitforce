@@ -10,20 +10,16 @@ import Loader from "../components/Loader";
 const Trainers = ({ history, location }) => {
   const query = useQuery(location.search);
 
-  const body = {};
   const country = query.get("country");
   const city = query.get("city");
   const service = query.get("service");
 
-  country && (body.country = country);
-  city && (body.city = city);
-
   const [data, loading] = useFetch(
     service
       ? `${Config.API_URL}/trainers/${service}`
-      : `${Config.API_URL}/trainers`,
-    service ? "GET" : "POST",
-    service ? null : body
+      : `${Config.API_URL}/trainers?country=${country}${
+          city ? `&city=${city}` : ""
+        }`
   );
 
   useEffect(() => {
