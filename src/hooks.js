@@ -1,5 +1,8 @@
 
 import { useState, useEffect } from "react";
+import {
+  useLocation
+} from "react-router-dom";
 
 function useFetch(url, method, body) {
   const [data, setData] = useState([]);
@@ -25,4 +28,9 @@ function useFetch(url, method, body) {
   }, []);
   return [data, loading];
 }
-export { useFetch };
+
+function useQuery(search) {
+  return new URLSearchParams(search);
+}
+
+export { useFetch, useQuery };

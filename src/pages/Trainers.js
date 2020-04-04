@@ -1,32 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Config from "../config";
-import { useFetch } from "../hooks";
+import { useFetch, useQuery } from "../hooks";
+import { servicesArr } from "../constants";
 
 // Components
 import Trainer from "../components/Trainer";
 import Loader from "../components/Loader";
 
-const Trainers = ({ history, match, location }) => {
-  const [data, loading] = useFetch(`${Config.API_URL}/trainers`, "POST", {
-    country: match.params.servece
-  });
+const Trainers = ({ history, location }) => {
+  console.log("location", location);
+  const query = useQuery(location.search);
 
-  console.log("data", data);
+  const body = {};
+  const country = query.get("country");
+  const city = query.get("city");
+  const service = query.get("service");
+
+  country && (body.country = country);
+  city && (body.city = city);
+
+  const [data, loading] = useFetch(
+    service
+      ? `${Config.API_URL}/trainers/${service}`
+      : `${Config.API_URL}/trainers`,
+    service ? "GET" : "POST",
+    service ? null : body
+  );
+
   useEffect(() => {
-    // setFilter(match.params.servece);
     window.scroll(0, 0);
-  }, [match.params.servece]);
-
-  // const [filter, setFilter] = useState({});
+  }, []);
 
   const getParamsType = () => {
-    if (location.type === "servece") {
-      return `Service Type: ${match.params.servece}
-      `;
-    } else if (location.type === "country") {
-      return `Country: ${match.params.servece}`;
-    } else if (location.type === "city") {
-      return `City: ${match.params.servece}`;
+    console.log("eee", city);
+    console.log("eee", country);
+    if (service && servicesArr[service]) {
+      return `Service Type: ${servicesArr[service].value}`;
+    } else if (country && !city) {
+      return `Country: ${country}`;
+    } else if (country && city) {
+      return `City: ${city}`;
     }
   };
   return (
@@ -42,15 +55,9 @@ const Trainers = ({ history, match, location }) => {
           <div className="page__country">{getParamsType()}</div>
         </div>
         <div className="trainers__items">
-          {data.map(trainer => {
-            // if (
-            //   elem.specialities.match(filter) ||
-            //   elem.location.match(filter)
-            // ) {
-            return <Trainer data={trainer} />;
-            // }
-            // return <div />;
-          })}
+          {data.map(trainer => (
+            <Trainer trainer={trainer} key={trainer.id} />
+          ))}
         </div>
       </div>
     </section>
@@ -58,18 +65,3 @@ const Trainers = ({ history, match, location }) => {
 };
 
 export default Trainers;
-
-const trainersArr = [
-  {
-    specialities: "Online Coaching, Diet and nutrition",
-    location: "Liverpool"
-  },
-  {
-    specialities: "Health and fitness training, Diet and nutrition",
-    location: "United Kingdom, Liverpool"
-  },
-  {
-    specialities: "Health and fitness training, Diet and nutrition",
-    location: "Termecula, California, United States"
-  }
-];

@@ -32,37 +32,37 @@ const Countries = () => {
         </div>
         <div className="countries__services">
           <Link
-            to={{ pathname: "/trainers/Online Coaching", type: "servece" }}
+            to={{ pathname: "/trainers/", search: "?service=5" }}
             className="countries__service"
           >
             Online Coaching
           </Link>
           <Link
-            to={{ pathname: "/trainers/Health and fitness training" }}
+            to={{ pathname: "/trainers/", search: "?service=0" }}
             className="countries__service"
           >
             Health and fitness training
           </Link>
           <Link
-            to={{ pathname: "/trainers/Yoga and Pilates", type: "servece" }}
+            to={{ pathname: "/trainers/", search: "?service=1" }}
             className="countries__service"
           >
             Yoga and Pilates
           </Link>
           <Link
-            to={{ pathname: "/trainers/Diet and nutrition", type: "servece" }}
+            to={{ pathname: "/trainers/", search: "?service=2" }}
             className="countries__service ml25px"
           >
             Diet and nutrition
           </Link>
           <Link
-            to={{ pathname: "/trainers/Physiotherapy", type: "servece" }}
+            to={{ pathname: "/trainers/", search: "?service=3" }}
             className="countries__service ml25px"
           >
             Physiotherapy
           </Link>
           <Link
-            to={{ pathname: "/trainers/Other", type: "servece" }}
+            to={{ pathname: "/trainers/", search: "?service=4" }}
             className="countries__service ml25px"
           >
             Other
@@ -90,7 +90,8 @@ const Countries = () => {
                       <h6>
                         <Link
                           to={{
-                            pathname: `/trainers/${country}`,
+                            pathname: `/trainers`,
+                            search: `?country=${country}`,
                             type: "country"
                           }}
                         >
@@ -102,7 +103,8 @@ const Countries = () => {
                       {data[country].map(city => (
                         <Link
                           to={{
-                            pathname: `/trainers/${city}`,
+                            pathname: "/trainers",
+                            search: `?country=${country}&city=${city}`,
                             type: "city"
                           }}
                           className="countries__city"
@@ -122,10 +124,3 @@ const Countries = () => {
 };
 
 export default Countries;
-
-// {key:0, value:'Health and fitness training', order: 1 },
-// {key:1, value:'Yoga and Pilates', order: 2 },
-// {key:2, value:'Diet and nutrition', order: 3},
-// {key:3, value:'Physiotherapy', order: 4},
-// {key:4, value:'Other', order: 5},
-// {key:5, value:'Online Coaching', order: 0},

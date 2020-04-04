@@ -12,7 +12,7 @@ import Trainer from "./pages/Trainer";
 import Trainers from "./pages/Trainers";
 
 import "./App.scss";
-
+// :country?/:city?/
 function App() {
   return (
     <Router>
@@ -20,7 +20,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Countries} />
-          <Route exact path="/trainers/:servece" component={Trainers} />
+          <Route exact path="/trainers"  component={Trainers} />
           <Route exact path="/trainer" component={Trainer} />
         </Switch>
         <Footer />
