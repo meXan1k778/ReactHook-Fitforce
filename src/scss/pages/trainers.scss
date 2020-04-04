@@ -111,7 +111,21 @@
 
       .trainers__spec {
         font-size: 18px;
-        margin: 36px 0 15px;
+
+        &:first-child {
+          margin: 36px 0 15px;
+
+        }
+
+        .specialities {
+          margin-right: 18px;
+
+          @media screen and (max-width: 768px) {
+            margin-right: 13px;
+          }
+        }
+
+        margin: 15px 0 15px;
         display: flex;
 
         &>div {

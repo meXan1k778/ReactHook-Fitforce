@@ -36,7 +36,7 @@ const Trainer = ({ trainer }) => {
         </p>
       </div>
       <div className="trainers__spec">
-        <span>Specialities: </span>
+        <span>Certifications: </span>
         <div>
           {services.map((service, index) => (
             <span className="trainers__spec_item" key={index}>
@@ -46,7 +46,18 @@ const Trainer = ({ trainer }) => {
           ))}
         </div>
       </div>
-      <Link to={`/trainer/google-${id}`}  className="trainers__link">
+      <div className="trainers__spec">
+        <span className="specialities">Specialities: </span>
+        <div>
+          {services.map((service, index) => (
+            <span className="trainers__spec_item" key={index}>
+              {servicesArr[service].value}
+              {index !== services.length - 1 && ", "}
+            </span>
+          ))}
+        </div>
+      </div>
+      <Link to={`/trainer/${id}`}  className="trainers__link">
         Learn more about {first_name + " " + last_name}
       </Link>
     </div>
