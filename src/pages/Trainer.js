@@ -57,7 +57,8 @@ const Trainer = ({ match, history }) => {
                         type: "country"
                       }}
                     >
-                      {", " + data[0].country}
+                      <i className="coma">, </i>
+                      {data[0].country}
                     </Link>
                   )}
                 </p>
@@ -73,7 +74,10 @@ const Trainer = ({ match, history }) => {
                   <img
                     src={data[0].avatar_url}
                     alt=""
-                    onError={e => setIsValidUrl(false)}
+                    onError={e => {
+                      console.log("dddd");
+                      setIsValidUrl(false);
+                    }}
                   />
                 ) : (
                   <LaterAvatar
@@ -106,7 +110,7 @@ const Trainer = ({ match, history }) => {
                           type: "city"
                         }}
                       >
-                        {", " + data[0].city}
+                        <i className="coma">, </i> {data[0].city}
                       </Link>
                     )}
                   </p>
@@ -119,7 +123,9 @@ const Trainer = ({ match, history }) => {
                       data[0].certificates.map((certificate, index) => (
                         <span className="trainers__spec_item" key={index}>
                           {certificate}
-                          {index !== data[0].services.length - 1 && ", "}
+                          {index !== data[0].services.length - 1 && (
+                            <i className="coma">, </i>
+                          )}
                         </span>
                       ))}
                   </p>
@@ -136,7 +142,9 @@ const Trainer = ({ match, history }) => {
                         }}
                       >
                         {servicesArr[service].value}
-                        {index !== data[0].services.length - 1 && ", "}
+                        {index !== data[0].services.length - 1 && (
+                          <i className="coma">, </i>
+                        )}
                       </Link>
                     ))}
                   </p>
