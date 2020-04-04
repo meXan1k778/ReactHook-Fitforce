@@ -60,10 +60,12 @@ const Trainer = ({ match, history }) => {
                     </Link>
                   )}
                 </p>
-                <div className="trainer__certs">
-                  <img src="/images/quality.svg" alt="" />
-                  <p>10 Certificates</p>
-                </div>
+                {data[0].certificates && data[0].certificates.length && (
+                  <div className="trainer__certs">
+                    <img src="/images/quality.svg" alt="" />
+                    <p>{data[0].certificates.length} Certificates</p>
+                  </div>
+                )}
               </div>
               <div className="trainer__pic">
                 {isValidUrl && data[0].avatar_url ? (
@@ -82,24 +84,43 @@ const Trainer = ({ match, history }) => {
               <div className="trainer__about">
                 <div className="trainer__item trainer__item_mob">
                   <h6>City</h6>
-                  <p>Mayford, United Kingdom</p>
+                  <p>
+                    {!data[0].city || (!data[0].country && "Online Trainer")}
+                    {data[0].country && data[0].city && (
+                      <Link
+                        to={{
+                          pathname: `/trainers`,
+                          search: `?country=${data[0].country}`,
+                          type: "country"
+                        }}
+                      >
+                        {data[0].country}
+                      </Link>
+                    )}
+                    {data[0].city && data[0].country && (
+                      <Link
+                        to={{
+                          pathname: "/trainers",
+                          search: `?country=${data[0].country}&city=${data[0].city}`,
+                          type: "city"
+                        }}
+                      >
+                        {", " + data[0].city}
+                      </Link>
+                    )}
+                  </p>
                 </div>
                 <div className="trainer__item trainer__item_desktop">
                   <h6>Certifications</h6>
                   <p>
-                    {data[0].services.map((service, index) => (
-                      <Link
-                        key={index}
-                        to={{
-                          pathname: "/trainers/",
-                          search: `?service=${service}`
-                        }}
-                      >
-                        {servicesArr[service].value}
-                        {index !== data[0].services.length - 1 && ", "}
-                      </Link>
-                    ))}
-                    A
+                    {data[0].certificates &&
+                      data[0].certificates.length &&
+                      data[0].certificates.map((certificate, index) => (
+                        <span className="trainers__spec_item" key={index}>
+                          {certificate.value}
+                          {index !== data[0].services.length - 1 && ", "}
+                        </span>
+                      ))}
                   </p>
                 </div>
                 <div className="trainer__item">

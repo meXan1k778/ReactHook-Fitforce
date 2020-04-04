@@ -13,7 +13,8 @@ const Trainer = ({ trainer }) => {
     country,
     services,
     avatar_url,
-    business_name
+    business_name,
+    certificates
   } = trainer;
   const [isValidUrl, setIsValidUrl] = useState(true);
 
@@ -38,9 +39,9 @@ const Trainer = ({ trainer }) => {
       <div className="trainers__spec">
         <span>Certifications: </span>
         <div>
-          {services.map((service, index) => (
+          {certificates && certificates.length && certificates.map((certificate, index) => (
             <span className="trainers__spec_item" key={index}>
-              {servicesArr[service].value}
+              {certificate.value}
               {index !== services.length - 1 && ", "}
             </span>
           ))}
