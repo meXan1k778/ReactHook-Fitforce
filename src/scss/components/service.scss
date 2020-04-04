@@ -9,6 +9,7 @@
     }
 
     .countries__service {
+        margin-left: 60px;
         font-size: 28px;
         font-weight: 700;
         color: #617288;
@@ -21,7 +22,7 @@
 
         @media screen and (max-width: 768px) {
             font-size: 14px;
-
+            margin-left: 0
         }
 
 

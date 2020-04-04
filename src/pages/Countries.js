@@ -16,6 +16,16 @@ const Countries = () => {
     setCountries(countries);
   }, [data]);
 
+  const formatFlugUrl = countryName => {
+    let countryFormat = countryName.replace(" ", "-").toLowerCase();
+    if (countryName === "United Kingdom") {
+      countryFormat = "great-britain";
+    } else if (countryName === "United States") {
+      countryFormat = "usa";
+    }
+    return `https://img.icons8.com/color/48/000000/${countryFormat}-circular.png`;
+  };
+
   return (
     <section className="countries">
       {loading && <Loader />}
@@ -76,15 +86,10 @@ const Countries = () => {
           {countries.length
             ? countries.map(country => {
                 return (
-                  <div className="countries__item">
+                  <div className="countries__item" key={country}>
                     <div className="countries__country">
                       <div className="countries__flag">
-                        <img
-                          src={`https://img.icons8.com/color/48/000000/${country
-                            .replace(" ", "_")
-                            .toLowerCase()}-circular.png`}
-                          alt=""
-                        />
+                        <img src={formatFlugUrl(country)} alt="" />
                       </div>
                       <h6>
                         <Link
@@ -101,6 +106,7 @@ const Countries = () => {
                     <div className="countries__cities">
                       {data[country].map(city => (
                         <Link
+                          key={city}
                           to={{
                             pathname: "/trainers",
                             search: `?country=${country}&city=${city}`,

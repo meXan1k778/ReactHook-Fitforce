@@ -1,25 +1,28 @@
 
 import { useState, useEffect } from "react";
-import {
-  useLocation
-} from "react-router-dom";
 
 function useFetch(url, method, body) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+
   const opitons = {
     method,
   }
   if( method  === "POST") {
-    opitons.headers = {'Content-Type': 'application/json'};
+    opitons.headers = {
+      // 'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+      'Content-Type': 'application/json',
+      // 'Accept': 'application/json',
+      // 'Access-Control-Allow-Origin': '*',
+      // 'Access-Control-Allow-Credentials': 'true'
+    };
+
     (opitons.body = JSON.stringify(body));
   }
  
-
   async function fetchUrl() {
     const response = await fetch(url, opitons);
     const json = await response.json();
-    console.log('json', json)
     setLoading(false);
     setData(json);
   }

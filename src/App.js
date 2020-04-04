@@ -21,7 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Countries} />
           <Route exact path="/trainers"  component={Trainers} />
-          <Route exact path="/trainer" component={Trainer} />
+          <Route exact path="/trainer/:id" component={Trainer} />
         </Switch>
         <Footer />
       </Fragment>

@@ -6,7 +6,6 @@ const Header = () => {
 
   const [isOpened, setOpened] = useState(false);
 
-  console.log('###########',history )
   return (
     <header className="header">
       <div className="container">

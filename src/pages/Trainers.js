@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import Config from "../config";
 import { useFetch, useQuery } from "../hooks";
 import { servicesArr } from "../constants";
@@ -48,15 +48,21 @@ const Trainers = ({ history, location }) => {
           <img src="/images/arrowBack.svg" alt="" />
           <span>Back</span>
         </div>
-        <div className="page__mainTitle">
-          <h1>Available Trainers</h1>
-          <div className="page__country">{getParamsType()}</div>
-        </div>
-        <div className="trainers__items">
-          {data.map(trainer => (
-            <Trainer trainer={trainer} key={trainer.id} />
-          ))}
-        </div>
+        {data.length ? (
+          <Fragment>
+            <div className="page__mainTitle">
+              <h1>Available Trainers</h1>
+              <div className="page__country">{getParamsType()}</div>
+            </div>
+            <div className="trainers__items">
+              {data.map(trainer => (
+                <Trainer trainer={trainer} key={trainer.id} />
+              ))}
+            </div>
+          </Fragment>
+        ) : (
+          ""
+        )}
       </div>
     </section>
   );
