@@ -8,7 +8,6 @@ import Trainer from "../components/Trainer";
 import Loader from "../components/Loader";
 
 const Trainers = ({ history, location }) => {
-  console.log("location", location);
   const query = useQuery(location.search);
 
   const body = {};
@@ -32,8 +31,6 @@ const Trainers = ({ history, location }) => {
   }, []);
 
   const getParamsType = () => {
-    console.log("eee", city);
-    console.log("eee", country);
     if (service && servicesArr[service]) {
       return `Service Type: ${servicesArr[service].value}`;
     } else if (country && !city) {
@@ -42,6 +39,7 @@ const Trainers = ({ history, location }) => {
       return `City: ${city}`;
     }
   };
+
   return (
     <section className="trainers">
       {loading && <Loader />}

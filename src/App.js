@@ -12,7 +12,7 @@ import Trainer from "./pages/Trainer";
 import Trainers from "./pages/Trainers";
 
 import "./App.scss";
-// :country?/:city?/
+
 function App() {
   return (
     <Router>

@@ -1,19 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Header = () => {
+  let history = useHistory();
+
   const [isOpened, setOpened] = useState(false);
 
+  console.log('###########',history )
   return (
     <header className="header">
       <div className="container">
         <div className="header__wrap">
           <div className="header__logoBox">
-            <img src="/images/logo.svg" alt="Fitforce" className="header__logo" />
+            <img src="/images/logo.svg" alt="Fitforce" className="header__logo" onClick={() => history.push('/')} />
             <img
               src="/images/logo_small.svg"
               alt="Fitforce"
               className="header__logo_small"
+              onClick={() => history.push('/')} 
             />
           </div>
           <div className="header__burger" onClick={() => setOpened(!isOpened)}>

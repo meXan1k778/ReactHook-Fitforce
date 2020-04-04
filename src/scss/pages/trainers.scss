@@ -49,6 +49,22 @@
           height: 100px;
           overflow: hidden;
 
+
+          .laterAvatr {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #519beb;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+
+          }
+
+
           @media screen and (max-width: 768px) {
             max-width: 66px;
             height: 66px;
@@ -95,6 +111,15 @@
       .trainers__spec {
         font-size: 18px;
         margin: 36px 0 15px;
+        display: flex;
+
+        &>div {
+          margin-left: 15px;
+        }
+
+        .trainers__spec_item {
+          font-weight: normal;
+        }
 
         @media screen and (max-width: 768px) {
           font-size: 14px;

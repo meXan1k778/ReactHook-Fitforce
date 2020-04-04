@@ -80,10 +80,9 @@ const Countries = () => {
                     <div className="countries__country">
                       <div className="countries__flag">
                         <img
-                          src={`/images/flags/Flag_of_${country.replace(
-                            " ",
-                            "_"
-                          )}.png`}
+                          src={`https://img.icons8.com/color/48/000000/${country
+                            .replace(" ", "_")
+                            .toLowerCase()}-circular.png`}
                           alt=""
                         />
                       </div>
