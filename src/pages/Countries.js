@@ -83,7 +83,7 @@ const Countries = () => {
             <Link
               to={{
                 pathname: "/trainers/",
-                search: "?service=Yoga and Pilates"
+                search: "?service=Diet and nutrition"
               }}
               className="countries__service ml25px"
             >
@@ -92,7 +92,7 @@ const Countries = () => {
             <Link
               to={{
                 pathname: "/trainers/",
-                search: "?service=Yoga and Pilates"
+                search: "?service=Physiotherapy"
               }}
               className="countries__service ml25px"
             >
@@ -101,7 +101,7 @@ const Countries = () => {
             <Link
               to={{
                 pathname: "/trainers/",
-                search: "?service=Yoga and Pilates"
+                search: "?service=Other"
               }}
               className="countries__service ml25px"
             >

@@ -122,6 +122,18 @@ const Trainer = ({ match, history }) => {
                         Online Trainer
                       </Link>
                     )}
+
+                    {data[0].city && data[0].country && (
+                      <Link
+                        to={{
+                          pathname: "/trainers",
+                          search: `?country=${data[0].country}&city=${data[0].city}`,
+                          type: "city"
+                        }}
+                      >
+                        {data[0].city} <i className="coma">, </i>
+                      </Link>
+                    )}
                     {data[0].country && data[0].city && (
                       <Link
                         to={{
@@ -131,17 +143,6 @@ const Trainer = ({ match, history }) => {
                         }}
                       >
                         {data[0].country}
-                      </Link>
-                    )}
-                    {data[0].city && data[0].country && (
-                      <Link
-                        to={{
-                          pathname: "/trainers",
-                          search: `?country=${data[0].country}&city=${data[0].city}`,
-                          type: "city"
-                        }}
-                      >
-                        <i className="coma">, </i> {data[0].city}
                       </Link>
                     )}
                   </p>
