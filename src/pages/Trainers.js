@@ -13,14 +13,20 @@ const Trainers = ({ history, location }) => {
   const country = query.get("country");
   const city = query.get("city");
   const service = query.get("service");
+  const category = query.get("category");
 
-  const [data, loading] = useFetch(
-    service
-      ? `${Config.API_URL}/trainers?service=${service}`
-      : `${Config.API_URL}/trainers?country=${country}${
-          city ? `&city=${city}` : ""
-        }`
-  );
+  const url = () => {
+    if (service) {
+      return `${Config.API_URL}/trainers?service=${service}`;
+    } else if (category) {
+      return `${Config.API_URL}/trainers?category=${category}`;
+    }
+    return `${Config.API_URL}/trainers?country=${country}${
+      city ? `&city=${city}` : ""
+    }`;
+  };
+
+  const [data, loading] = useFetch(url());
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -33,6 +39,8 @@ const Trainers = ({ history, location }) => {
       return `Country: ${country}`;
     } else if (country && city) {
       return `City: ${city}`;
+    } else if (category) {
+      return `Category: ${category}`;
     }
   };
 
@@ -43,6 +51,8 @@ const Trainers = ({ history, location }) => {
       return country;
     } else if (country && city) {
       return city;
+    } else if (category) {
+      return "Online Trainer";
     }
   };
 

@@ -52,7 +52,16 @@ const Trainer = ({ match, history }) => {
                   {data[0].business_name && "/ " + data[0].business_name}
                 </h1>
                 <p className="d-none d-md-block">
-                  {!data[0].city || (!data[0].country && "Online Trainer")}
+                  {(!data[0].city || !data[0].country) && (
+                    <Link
+                      to={{
+                        pathname: "/trainers/",
+                        search: `?category=OnlineTrainer`
+                      }}
+                    >
+                      Online Trainer
+                    </Link>
+                  )}
 
                   {data[0].city && data[0].country && (
                     <Link
@@ -103,7 +112,16 @@ const Trainer = ({ match, history }) => {
                 <div className="trainer__item trainer__item_mob">
                   <h6>City</h6>
                   <p>
-                    {!data[0].city || (!data[0].country && "Online Trainer")}
+                    {(!data[0].city || !data[0].country) && (
+                      <Link
+                        to={{
+                          pathname: "/trainers/",
+                          search: `?category=OnlineTrainer`
+                        }}
+                      >
+                        Online Trainer
+                      </Link>
+                    )}
                     {data[0].country && data[0].city && (
                       <Link
                         to={{
@@ -153,7 +171,7 @@ const Trainer = ({ match, history }) => {
                         key={index}
                         to={{
                           pathname: "/trainers/",
-                          search: `?service=${service}`
+                          search: `?service=${servicesArr[service].value}`
                         }}
                       >
                         {servicesArr[service].value}

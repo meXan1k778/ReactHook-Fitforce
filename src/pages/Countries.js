@@ -61,6 +61,7 @@ const Countries = () => {
             >
               Online Coaching
             </Link>
+
             <Link
               to={{
                 pathname: "/trainers/",
@@ -112,6 +113,25 @@ const Countries = () => {
             <h1>Select Country & City</h1>
           </div>
           <div className="countries__items">
+            <div className="countries__item">
+              <div className="countries__country">
+                <div className="countries__flag www">
+                  <img src="/images/www.svg" alt="" />
+                </div>
+                <h6>
+                  <Link
+                    to={{
+                      pathname: "/trainers/",
+                      search: "?category=OnlineTrainer"
+                    }}
+                    className="countries__service"
+                  >
+                    Online Trainer
+                  </Link>
+                </h6>
+              </div>
+            </div>
+
             {countries.length
               ? countries.map(country => {
                   return (

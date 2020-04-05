@@ -37,6 +37,11 @@
         .countries__flag {
           margin-right: 20px;
 
+          &.www img {
+            width: 35px;
+            height: 35px;
+          }
+
           img {
             max-width: 100%;
             width: 40px;
