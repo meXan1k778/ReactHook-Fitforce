@@ -110,7 +110,7 @@ const Countries = () => {
           </div>
 
           <div className="page__mainTitle">
-            <h1>Select Country & City</h1>
+            <h1>Select Country or City</h1>
           </div>
           <div className="countries__items">
             <div className="countries__item">
