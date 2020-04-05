@@ -46,7 +46,7 @@ const Countries = () => {
             onClick={() => (window.location = "https://fitforce.com/")}
           >
             <img src="/images/arrowBack.svg" alt="" />
-            <span>Back to FotForce.com</span>
+            <span>Back to FitForce.com</span>
           </div>
           <div className="page__mainTitle">
             <h1>Select Service</h1>
