@@ -6,7 +6,6 @@ import LaterAvatar from "../components/LaterAvatar";
 
 const Trainer = ({ trainer }) => {
   const {
-    id,
     first_name,
     last_name,
     city,
@@ -36,19 +35,23 @@ const Trainer = ({ trainer }) => {
           {city && country ? city + ", " + country : "Online Trainer"}
         </p>
       </div>
-      <div className="trainers__spec">
-        <span>Certifications: </span>
-        <div>
-          {certificates &&
-            certificates.length &&
-            certificates.map((certificate, index) => (
+      {certificates && certificates.length ? (
+        <div className="trainers__spec">
+          <span>Certifications: </span>
+          <div>
+            {certificates.map((certificate, index) => (
               <span className="trainers__spec_item" key={index}>
                 {certificate}
-                {index !== services.length - 1 && <i className="coma">, </i>}
+                {index !== certificates.length - 1 && (
+                  <i className="coma">, </i>
+                )}
               </span>
             ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        ""
+      )}
       <div className="trainers__spec">
         <span className="specialities">Specialities: </span>
         <div>
@@ -60,7 +63,10 @@ const Trainer = ({ trainer }) => {
           ))}
         </div>
       </div>
-      <Link to={`/trainer/${id}`} className="trainers__link">
+      <Link
+        to={`/trainer-profile/${first_name + "-" + last_name}`}
+        className="trainers__link"
+      >
         Learn more about {first_name + " " + last_name}
       </Link>
     </div>

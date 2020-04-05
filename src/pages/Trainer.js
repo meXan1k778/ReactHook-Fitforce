@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Config from "../config";
 import { useFetch } from "../hooks";
 import { servicesArr } from "../constants";
+import { Helmet } from "react-helmet";
 
 // Componenst
 import Loader from "../components/Loader";
@@ -10,7 +11,7 @@ import LaterAvatar from "../components/LaterAvatar";
 
 const Trainer = ({ match, history }) => {
   const [data, loading] = useFetch(
-    `${Config.API_URL}/trainer/${match.params.id}`
+    `${Config.API_URL}/trainer_profile/${match.params.id}`
   );
 
   const [isValidUrl, setIsValidUrl] = useState(true);
@@ -20,6 +21,21 @@ const Trainer = ({ match, history }) => {
 
   return (
     <Fragment>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          {data.length && data[0].first_name + " " + data[0].last_name}
+        </title>
+        <meta
+          name="keywords"
+          content={
+            data.length &&
+            data[0].services &&
+            data[0].services.map(service => servicesArr[service].value)
+          }
+        />
+        <meta name="description" content={data.length && data[0].about} />
+      </Helmet>
       <section className="trainer">
         {loading && <Loader />}
 
@@ -112,12 +128,11 @@ const Trainer = ({ match, history }) => {
                     )}
                   </p>
                 </div>
-                <div className="trainer__item trainer__item_desktop">
-                  <h6>Certifications</h6>
-                  <p>
-                    {data[0].certificates &&
-                      data[0].certificates.length &&
-                      data[0].certificates.map((certificate, index) => (
+                {data[0].certificates && data[0].certificates.length ? (
+                  <div className="trainer__item trainer__item_desktop">
+                    <h6>Certifications</h6>
+                    <p>
+                      {data[0].certificates.map((certificate, index) => (
                         <span className="trainers__spec_item" key={index}>
                           {certificate}
                           {index !== data[0].certificates.length - 1 && (
@@ -125,8 +140,11 @@ const Trainer = ({ match, history }) => {
                           )}
                         </span>
                       ))}
-                  </p>
-                </div>
+                    </p>
+                  </div>
+                ) : (
+                  ""
+                )}
                 <div className="trainer__item">
                   <h6>Services</h6>
                   <p>

@@ -14,15 +14,6 @@ import Trainers from "./pages/Trainers";
 import "./App.scss";
 
 function App() {
-
-  // Hede all console
-  const noOp = function() {}
-console.log('window', window)
-  window.console = {
-    log: noOp,
-    dir: noOp,
-    error:noOp,
-  };
   return (
     <Router>
       <Fragment>
@@ -30,7 +21,7 @@ console.log('window', window)
         <Switch>
           <Route exact path="/" component={Countries} />
           <Route exact path="/trainers"  component={Trainers} />
-          <Route exact path="/trainer/:id" component={Trainer} />
+          <Route exact path="/trainer-profile/:id" component={Trainer} />
         </Switch>
         <Footer />
       </Fragment>
