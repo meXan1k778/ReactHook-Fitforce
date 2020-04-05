@@ -13,7 +13,8 @@ const Trainer = ({ trainer }) => {
     services,
     avatar_url,
     business_name,
-    certificates
+    certificates,
+    url
   } = trainer;
   const [isValidUrl, setIsValidUrl] = useState(true);
 
