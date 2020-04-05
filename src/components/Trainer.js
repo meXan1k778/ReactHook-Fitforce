@@ -64,7 +64,7 @@ const Trainer = ({ trainer }) => {
         </div>
       </div>
       <Link
-        to={`/trainer-profile/${first_name + "-" + last_name}`}
+        to={`/trainer-profile/${url}`}
         className="trainers__link"
       >
         Learn more about {first_name + " " + last_name}
