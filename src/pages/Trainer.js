@@ -219,15 +219,15 @@ const Trainer = ({ match, history }) => {
                 <div className="trainer__download">
                   <p>
                     Download <span>FitForce.com</span> Personal Fitness app and
-                    connect with <span>Rob</span>
+                    connect with <span>{data[0].first_name}</span>.
                   </p>
                   <div className="trainer__btns">
-                    <Link to={"#"}>
+                    <a href="https://itunes.apple.com/us/app/fitforce-com/id1419933665" target="_blank">
                       <img src="/images/Appstorebtn.svg" alt="" />
-                    </Link>
-                    <Link to={"#"}>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.fitforce.client" target="_blank">
                       <img src="/images/Google play btn.svg" alt="" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

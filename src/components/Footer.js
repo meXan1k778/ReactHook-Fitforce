@@ -51,6 +51,12 @@ const Footer = () => {
               </a>
               <a
                 className="footer-menu__item"
+                href="https://trainers.fitforce.com/"
+              >
+                Find Trainers
+              </a>
+              <a
+                className="footer-menu__item"
                 href="https://fitforce.zendesk.com/"
               >
                 Support
