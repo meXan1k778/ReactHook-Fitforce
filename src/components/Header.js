@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
 
 const Header = () => {
-  let history = useHistory();
 
   const [isOpened, setOpened] = useState(false);
 

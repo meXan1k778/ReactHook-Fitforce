@@ -222,10 +222,10 @@ const Trainer = ({ match, history }) => {
                     connect with <span>{data[0].first_name}</span>.
                   </p>
                   <div className="trainer__btns">
-                    <a href="https://itunes.apple.com/us/app/fitforce-com/id1419933665" target="_blank">
+                    <a href="https://itunes.apple.com/us/app/fitforce-com/id1419933665" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Appstorebtn.svg" alt="" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.fitforce.client" target="_blank">
+                    <a href="https://play.google.com/store/apps/details?id=com.fitforce.client" target="_blank" rel="noopener noreferrer">
                       <img src="/images/Google play btn.svg" alt="" />
                     </a>
                   </div>
