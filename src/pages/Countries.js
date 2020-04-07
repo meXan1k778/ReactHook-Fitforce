@@ -12,7 +12,6 @@ const Countries = () => {
   const [data, loading] = useFetch(`${Config.API_URL}/countrycities`, "GET");
 
   useEffect(() => {
-    window.clear && window.clear();
     window.scroll(0, 0);
     const countries = Object.keys(data);
     setCountries(countries);

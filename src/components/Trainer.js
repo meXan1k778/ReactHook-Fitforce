@@ -75,7 +75,7 @@ const Trainer = ({ trainer }) => {
 };
 
 Trainer.propTypes = {
-  data: PropTypes.object
+  trainer: PropTypes.object
 };
 
 export default Trainer;
