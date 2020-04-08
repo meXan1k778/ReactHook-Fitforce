@@ -53,35 +53,20 @@ const Trainer = ({ match, history }) => {
                 </h1>
                 <p className="d-none d-md-block">
                   {(!data[0].city || !data[0].country) && (
-                    <Link
-                      to={{
-                        pathname: "/trainers/",
-                        search: `?category=OnlineTrainer`
-                      }}
-                    >
+                    <Link to={`/trainers-category/OnlineTrainer/`}>
                       Online Trainer
                     </Link>
                   )}
 
                   {data[0].city && data[0].country && (
                     <Link
-                      to={{
-                        pathname: "/trainers",
-                        search: `?country=${data[0].country}&city=${data[0].city}`,
-                        type: "city"
-                      }}
+                      to={`/trainers-city/${data[0].country}/${data[0].city}`}
                     >
                       {data[0].city}
                     </Link>
                   )}
                   {data[0].country && data[0].city && (
-                    <Link
-                      to={{
-                        pathname: `/trainers`,
-                        search: `?country=${data[0].country}`,
-                        type: "country"
-                      }}
-                    >
+                    <Link to={`/trainers-country/${data[0].country}`}>
                       <i className="coma">, </i>
                       {data[0].country}
                     </Link>
@@ -113,35 +98,20 @@ const Trainer = ({ match, history }) => {
                   <h6>City</h6>
                   <p>
                     {(!data[0].city || !data[0].country) && (
-                      <Link
-                        to={{
-                          pathname: "/trainers/",
-                          search: `?category=OnlineTrainer`
-                        }}
-                      >
+                      <Link to={`/trainers-category/OnlineTrainer/`}>
                         Online Trainer
                       </Link>
                     )}
 
                     {data[0].city && data[0].country && (
                       <Link
-                        to={{
-                          pathname: "/trainers",
-                          search: `?country=${data[0].country}&city=${data[0].city}`,
-                          type: "city"
-                        }}
+                        to={`/trainers-city/${data[0].country}/${data[0].city}`}
                       >
                         {data[0].city} <i className="coma">, </i>
                       </Link>
                     )}
                     {data[0].country && data[0].city && (
-                      <Link
-                        to={{
-                          pathname: `/trainers`,
-                          search: `?country=${data[0].country}`,
-                          type: "country"
-                        }}
-                      >
+                      <Link to={`/trainers-country/${data[0].country}`}>
                         {data[0].country}
                       </Link>
                     )}
@@ -170,10 +140,7 @@ const Trainer = ({ match, history }) => {
                     {data[0].services.map((service, index) => (
                       <Link
                         key={index}
-                        to={{
-                          pathname: "/trainers/",
-                          search: `?service=${servicesArr[service].value}`
-                        }}
+                        to={`/trainers-service/${servicesArr[service].value}/`}
                       >
                         {servicesArr[service].value}
                         {index !== data[0].services.length - 1 && (
@@ -222,10 +189,18 @@ const Trainer = ({ match, history }) => {
                     connect with <span>{data[0].first_name}</span>.
                   </p>
                   <div className="trainer__btns">
-                    <a href="https://itunes.apple.com/us/app/fitforce-com/id1419933665" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://itunes.apple.com/us/app/fitforce-com/id1419933665"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img src="/images/Appstorebtn.svg" alt="" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.fitforce.client" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.fitforce.client"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img src="/images/Google play btn.svg" alt="" />
                     </a>
                   </div>

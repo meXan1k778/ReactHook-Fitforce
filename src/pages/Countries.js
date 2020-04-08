@@ -52,56 +52,38 @@ const Countries = () => {
           </div>
           <div className="countries__services">
             <Link
-              to={{
-                pathname: "/trainers/",
-                search: "?service=Online Coaching"
-              }}
+              to={"/trainers-service/Online Coaching"}
               className="countries__service"
             >
               Online Coaching
             </Link>
 
             <Link
-              to={{
-                pathname: "/trainers/",
-                search: "?service=Health and fitness training"
-              }}
+              to={"/trainers-service/Health and fitness training"}
               className="countries__service"
             >
               Health and fitness training
             </Link>
             <Link
-              to={{
-                pathname: "/trainers/",
-                search: "?service=Yoga and Pilates"
-              }}
+              to={"/trainers-service/Yoga and Pilates"}
               className="countries__service"
             >
               Yoga and Pilates
             </Link>
             <Link
-              to={{
-                pathname: "/trainers/",
-                search: "?service=Diet and nutrition"
-              }}
+              to={"/trainers-service/Diet and nutrition"}
               className="countries__service ml25px"
             >
               Diet and nutrition
             </Link>
             <Link
-              to={{
-                pathname: "/trainers/",
-                search: "?service=Physiotherapy"
-              }}
+              to={"/trainers-service/Physiotherapy"}
               className="countries__service ml25px"
             >
               Physiotherapy
             </Link>
             <Link
-              to={{
-                pathname: "/trainers/",
-                search: "?service=Other"
-              }}
+              to={"/trainers-service/Other"}
               className="countries__service ml25px"
             >
               Other
@@ -119,10 +101,7 @@ const Countries = () => {
                 </div>
                 <h6>
                   <Link
-                    to={{
-                      pathname: "/trainers/",
-                      search: "?category=OnlineTrainer"
-                    }}
+                    to={"/trainers-category/OnlineTrainer"}
                     className="countries__service"
                   >
                     Online Trainer
@@ -140,13 +119,7 @@ const Countries = () => {
                           <img src={formatFlugUrl(country)} alt="" />
                         </div>
                         <h6>
-                          <Link
-                            to={{
-                              pathname: `/trainers`,
-                              search: `?country=${country}`,
-                              type: "country"
-                            }}
-                          >
+                          <Link to={`/trainers-country/${country}`}>
                             {country}
                           </Link>
                         </h6>
@@ -155,11 +128,7 @@ const Countries = () => {
                         {data[country].map(city => (
                           <Link
                             key={city}
-                            to={{
-                              pathname: "/trainers",
-                              search: `?country=${country}&city=${city}`,
-                              type: "city"
-                            }}
+                            to={`/trainers-city/${country}/${city}`}
                             className="countries__city"
                           >
                             {city}

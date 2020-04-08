@@ -7,8 +7,11 @@ import { Helmet } from "react-helmet";
 import Trainer from "../components/Trainer";
 import Loader from "../components/Loader";
 
-const Trainers = ({ history, location }) => {
-  const query = useQuery(location.search);
+const Trainers = ({ history, location , match}) => {
+  console.log('@@@@@@@@@@@', location)
+  console.log('@@@@@@@@@@@', history)
+  console.log('@@@@@@@@@@@', match)
+  const query = useQuery(match.params);
 
   const country = query.get("country");
   const city = query.get("city");
